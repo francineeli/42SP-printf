@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:14:53 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/17 13:17:15 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:08:30 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static	void	convert(char *num, int n, size_t size)
 	}
 }
 
-int	*ft_itoa(int n)
+int	*ft_itoa(int nb)
 {
 	size_t	size;
 	char	*num;
@@ -69,17 +69,19 @@ int	*ft_itoa(int n)
 	return (num);
 }
 
-int		*ft_itoa(unsigned int n)
+int		*ft_utoa(unsigned int nb)
 {
 	size_t	size;
 	char	*num;
 	int		aux;
 
 	if (n >= 0)
+	{
 		size = 1;
+		aux = n / 10;
+	}
 	else
-		size = 2;
-	aux = n / 10;
+		return (ft_printstr("(null)"));
 	while (aux)
 	{
 		size++;
