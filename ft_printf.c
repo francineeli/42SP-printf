@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:00:12 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/17 09:33:21 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:14:14 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ int	ft_flags_check(char flag, va_list list)
 		return(ft_printchar(va_arg(list, int)));
 	if (flag == 's')
 		return(ft_printstr(va_arg(list, char *)));	
-	if (flag == 'd' || flah == 'i')
-		return (ft_itoa(va_arg(list, int)));
+	if (flag == 'd' || flag == 'i')
+		return (change to putnbr(va_arg(list, int)));
 	if (flag == 'u')
-		return (ft_utoa(va_arg(list, unsigned int)));
+		return (change to putnbr(va_arg(list, unsigned int)));
 	if (flag == 'x' || 'X')
-		return ();
+		return (ft_printhex(va_arg(list, unsigned long)));
 	if (flag == 'p')
 		return ();
 	else

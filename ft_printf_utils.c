@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 09:22:33 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/17 09:31:26 by feli-bar         ###   ########.fr       */
+/*   Created: 2022/10/17 13:14:53 by feli-bar          #+#    #+#             */
+/*   Updated: 2022/10/17 13:17:15 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,28 @@ int	*ft_itoa(int n)
 		convert(num, n, size);
 	return (num);
 }
+
+int		*ft_itoa(unsigned int n)
+{
+	size_t	size;
+	char	*num;
+	int		aux;
+
+	if (n >= 0)
+		size = 1;
+	else
+		size = 2;
+	aux = n / 10;
+	while (aux)
+	{
+		size++;
+		aux = aux / 10;
+	}
+	num = (char *)malloc(size + 1);
+	if (num == NULL)
+		return (NULL);
+	else
+		convert(num, n, size);
+	return (num);
+}
+
