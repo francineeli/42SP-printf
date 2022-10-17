@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 15:08:30 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/17 10:13:43 by feli-bar         ###   ########.fr       */
+/*   Created: 2022/10/17 08:50:26 by feli-bar          #+#    #+#             */
+/*   Updated: 2022/10/17 08:52:26 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	FT_PRINTF_H
-# define FT_PRINTF_H
+#include "printf.h"
 
-# include <unistd.h>
-# include<stdarg.h>
-# include <stdlib.h>
+int	ft_printchar(int c)
+{
+		write (1, &c, 1);
+		return (1);
+}
 
-/*---------------PRINTF---------------*/
-
-
-/*----------------UTILS---------------*/
-
-#endif

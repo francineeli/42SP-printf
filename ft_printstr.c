@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feli-bar <ifeli-bar@student.42sp.org.br>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 15:08:30 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/17 10:13:43 by feli-bar         ###   ########.fr       */
+/*   Created: 2022/10/17 08:53:36 by feli-bar          #+#    #+#             */
+/*   Updated: 2022/10/17 09:09:39 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	FT_PRINTF_H
-# define FT_PRINTF_H
+#include "printf.h"
 
-# include <unistd.h>
-# include<stdarg.h>
-# include <stdlib.h>
+int	ft_printstr(char *s)
+{
+		
+		int i;
 
-/*---------------PRINTF---------------*/
+		if (!s)
+				return (ft_printstr("(null)"));	
+		i = 0;
+		while (s[i])
+		{
+				ft_printchar(1, &s[i], 1);
+				i++;
+		}
+		return(i);
+}
 
-
-/*----------------UTILS---------------*/
-
-#endif
