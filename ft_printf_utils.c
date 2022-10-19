@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:14:53 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/17 16:08:30 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/19 09:22:28 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static	int	absolute(int n)
 {
 	if (n < 0)
-	n = n * (-1);
+		n = n * (-1);
 	return (n);
 }
 
@@ -69,7 +69,7 @@ int	*ft_itoa(int nb)
 	return (num);
 }
 
-int		*ft_utoa(unsigned int nb)
+int	*ft_utoa(unsigned int nb)
 {
 	size_t	size;
 	char	*num;
@@ -94,4 +94,3 @@ int		*ft_utoa(unsigned int nb)
 		convert(num, n, size);
 	return (num);
 }
-
