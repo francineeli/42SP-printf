@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:00:12 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/19 09:46:07 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:43:49 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	ft_printf(const char *str, ...)
 	int		counter;
 
 	if (!str)
-		return (NULL);
+		return (-1);
 	counter = 0;
 	va_start(list, str);
 	while (*str)
 	{
-		if (*str == %)
+		if (*str == '%')
 		{			
 			str++;
 			counter = ft_flags_check(*str, list);

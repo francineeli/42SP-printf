@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:14:53 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/19 09:22:28 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:52:20 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,21 @@ int	*ft_itoa(int nb)
 	char	*num;
 	int		aux;
 
-	if (n >= 0)
+	if (nb >= 0)
 		size = 1;
 	else
 		size = 2;
-	aux = n / 10;
+	aux = nb / 10;
 	while (aux)
 	{
 		size++;
 		aux = aux / 10;
 	}
-	num = (char *)malloc(size + 1);
+	num = malloc(size + 1);
 	if (num == NULL)
 		return (NULL);
 	else
-		convert(num, n, size);
+		convert(num, nb, size);
 	return (num);
 }
 
@@ -75,10 +75,10 @@ int	*ft_utoa(unsigned int nb)
 	char	*num;
 	int		aux;
 
-	if (n >= 0)
+	if (nb >= 0)
 	{
 		size = 1;
-		aux = n / 10;
+		aux = nb / 10;
 	}
 	else
 		return (ft_printstr("(null)"));
@@ -87,10 +87,10 @@ int	*ft_utoa(unsigned int nb)
 		size++;
 		aux = aux / 10;
 	}
-	num = (char *)malloc(size + 1);
+	num = malloc(size + 1);
 	if (num == NULL)
 		return (NULL);
 	else
-		convert(num, n, size);
+		convert(num, nb, size);
 	return (num);
 }
