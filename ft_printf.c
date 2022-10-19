@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:00:12 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/19 15:43:49 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:56:21 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_flags_check(char flag, va_list list);
 
-char	ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	list;
 	int		counter;

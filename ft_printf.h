@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:08:30 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/19 15:43:19 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:56:36 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define BASISUP "0123456789ABCDEF"
 # define BASISLOWER "0123456789abcdef"
 
-char	ft_printf(const char *str, ...);
+int		ft_printf(const char *str, ...);
 int		ft_printchar(int count);
 int		ft_printstr(char *str);
 int		ft_printuphex(unsigned long int nb, int count);
