@@ -6,13 +6,13 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:48:41 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/19 09:42:00 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:37:55 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_printptr(unsigned long int ptr)
+int	ft_printptr(unsigned long ptr)
 {
 	int	count;
 
@@ -25,7 +25,7 @@ int	ft_printptr(unsigned long int ptr)
 	else
 	{
 		count += write (1, "0x", 2);
-		count += ft_printlwhex(ptr, 0);
+		count += ft_printhex(ptr, 0);
 	}
 	return (count);
 }

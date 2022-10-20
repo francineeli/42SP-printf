@@ -6,11 +6,11 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 08:50:26 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/19 08:28:04 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:36:52 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printchar(int count)
 {

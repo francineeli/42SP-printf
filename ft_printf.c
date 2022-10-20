@@ -6,11 +6,11 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:00:12 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/19 15:56:21 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:10:37 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_flags_check(char flag, va_list list);
 
@@ -33,7 +33,7 @@ int	ft_printf(const char *str, ...)
 		else
 		{
 			counter++;
-			ft_putchar(*str);
+			ft_printchar(*str);
 		}
 		str++;
 	}
@@ -51,12 +51,10 @@ int	ft_flags_check(char flag, va_list list)
 		return (ft_itoa(va_arg(list, int)));
 	if (flag == 'u')
 		return (ft_utoa(va_arg(list, unsigned int)));
-	if (flag == 'X')
-		return (ft_printuphex(va_arg(list, unsigned long int)));
-	if (flag == 'x')
-		return (ft_printlwhex(va_arg(list, unsigned long int)));
+	if (flag == 'x' || flag == 'X')
+		return (ft_printhex(va_arg(list, unsigned int), flag));
 	if (flag == 'p')
-		return (ft_printptr(va_arg(list, unsigned long int)));
+		return (ft_printptr(va_arg(list, unsigned long)));
 	else
-		return (ft_putchar(flag));
+		return (ft_printchar(flag));
 }
