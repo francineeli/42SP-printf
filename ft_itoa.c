@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feli-bar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 09:52:14 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/20 10:49:01 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:47:05 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void len_nbr(char *num, int n, size_t size)
+static void	len_nbr(char *strn, int n, size_t size)
 {
-	num[size] = '\0';
+	strn[size] = '\0';
 	size--;
 	if (n >= 0)
 	{
 		while (size)
 		{
-			num[size] = (n % 10) + '0';
+			strn[size] = (n % 10) + '0';
 			n = n / 10;
 			size--;
 		}
-		num[size] = n + '0';
+		strn[size] = n + '0';
 	}
 	else
 	{
 		while (size)
 		{
-			num[size] = (n % 10) * -1  + '0';
+			strn[size] = (n % 10) * -1 + '0';
 			n = n / 10;
 			size--;
 		}
-		num[size] = '-';
+		strn[size] = '-';
 	}
 }
 
@@ -62,4 +62,3 @@ int	ft_itoa(int nb)
 	free(result);
 	return (size);
 }
-

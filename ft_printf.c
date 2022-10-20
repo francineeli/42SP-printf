@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:00:12 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/20 11:10:37 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:10:03 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@ int	ft_printf(const char *str, ...)
 	va_list	list;
 	int		counter;
 
+	counter = 0;
 	if (!str)
 		return (-1);
-	counter = 0;
 	va_start(list, str);
 	while (*str)
 	{
 		if (*str == '%')
 		{			
 			str++;
-			counter = ft_flags_check(*str, list);
+			counter += ft_flags_check(*str, list);
 		}
 		else
 		{
-			counter++;
-			ft_printchar(*str);
+			counter += ft_printchar(*str);
 		}
 		str++;
 	}
@@ -54,7 +53,7 @@ int	ft_flags_check(char flag, va_list list)
 	if (flag == 'x' || flag == 'X')
 		return (ft_printhex(va_arg(list, unsigned int), flag));
 	if (flag == 'p')
-		return (ft_printptr(va_arg(list, unsigned long)));
+		return (ft_printptr(va_arg(list, unsigned long int)));
 	else
-		return (ft_printchar(flag));
-}
+		return (ft_printchar('%'));
+}	

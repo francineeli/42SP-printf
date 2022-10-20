@@ -3,41 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feli-bar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: feli-bar <feli-bar@student.42sp.org.br>     #+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 09:53:55 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/20 10:49:28 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:46:29 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static  void len_nbr(char *num, int n, size_t size)
+static void	len_nbr(char *strn, unsigned int n, size_t size)
 {
-     num[size] = '\0';
-     size--;
-     if (n >= 0)
-     {
-         while (size)
-         {
-             num[size] = (n % 10) + '0';
-             n = n / 10;
-             size--;
-         }
-         num[size] = n + '0';
-     }
-     else
-     {
-         while (size)
-         {
-             num[size] = (n % 10) * -1  + '0';
-             n = n / 10;
-             size--;
-         }
-         num[size] = '-';
-    }
+	strn[size] = '\0';
+	size--;
+	if (n >= 0)
+	{
+		while (size)
+		{
+			strn[size] = (n % 10) + '0';
+			n = n / 10;
+			size--;
+		}
+		strn[size] = n + '0';
+	}
+	else
+	{
+		while (size)
+		{
+			strn[size] = (n % 10) * -1 + '0';
+			n = n / 10;
+			size--;
+		}
+		strn[size] = '-';
+	}
 }
-
 
 int	ft_utoa(unsigned int nb)
 {
@@ -57,7 +56,7 @@ int	ft_utoa(unsigned int nb)
 		size++;
 		aux = aux / 10;
 	}
-	result = malloc(size + 1);
+	result = (char *)malloc(size + 1);
 	if (!result)
 		return (0x0);
 	len_nbr(result, nb, size);

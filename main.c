@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feli-bar <ifeli-bar@student.42sp.org.br>   +#+  +:+       +#+        */
+/*   By: feli-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 08:53:36 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/20 14:27:00 by feli-bar         ###   ########.fr       */
+/*   Created: 2022/10/20 16:00:35 by feli-bar          #+#    #+#             */
+/*   Updated: 2022/10/20 16:05:05 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	ft_printstr(char *str)
-{	
-	int	i;
+int main()
+{
+	int o;
+	int f;
 
-	i = 0;
-	if (!str)
-		return (write(1, "(null)", 6));
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+	o = printf(" %c", '0');
+	f = ft_printf(" %c", '0');
+	if ( o == f)
+			printf("iguais");
+	else
+			printf("deu ko");
+	return (0);
 }
