@@ -6,11 +6,11 @@ FLAGS = -Wall -Werror -Wextra
 
 RM = rm -f
 
-FUNCTIONS = ft_printf.c ft_printchar.c ft_printstr.c ft_printhex.c\
-	       	ft_printptr.c ft_itoa.c ft_utoa.c
+FUNCTIONS = ft_printf.c ft_printc.c ft_prints.c ft_printx.c\
+	       	ft_printp.c ft_printi.c ft_printu.c
 
-OBJS = ft_printf.o ft_printchar.o ft_printstr.o ft_printhex.o\
-       ft_printptr.o ft_itoa.o ft_utoa.o
+OBJS = ft_printf.o ft_printc.o ft_prints.o ft_printx.o\
+       ft_printp.o ft_printi.o ft_printu.o
 
 all: $(NAME)
 

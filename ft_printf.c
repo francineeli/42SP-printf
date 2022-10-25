@@ -6,13 +6,14 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:00:12 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/20 16:10:03 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:06:30 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 int	ft_flags_check(char flag, va_list list);
+int	ft_doublecheck(char *str);
 
 int	ft_printf(const char *str, ...)
 {
@@ -32,7 +33,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			counter += ft_printchar(*str);
+			counter += ft_printc(*str);
 		}
 		str++;
 	}
@@ -43,17 +44,17 @@ int	ft_printf(const char *str, ...)
 int	ft_flags_check(char flag, va_list list)
 {
 	if (flag == 'c')
-		return (ft_printchar(va_arg(list, int)));
+		return (ft_printc(va_arg(list, int)));
 	if (flag == 's')
-		return (ft_printstr(va_arg(list, char *)));
+		return (ft_prints(va_arg(list, char *)));
 	if (flag == 'd' || flag == 'i')
-		return (ft_itoa(va_arg(list, int)));
+		return (ft_printi(va_arg(list, int)));
 	if (flag == 'u')
-		return (ft_utoa(va_arg(list, unsigned int)));
+		return (ft_printu(va_arg(list, unsigned int)));
 	if (flag == 'x' || flag == 'X')
-		return (ft_printhex(va_arg(list, unsigned int), flag));
+		return (ft_printx(va_arg(list, unsigned int), flag));
 	if (flag == 'p')
-		return (ft_printptr(va_arg(list, unsigned long int)));
+		return (ft_printp(va_arg(list, unsigned long int)));
 	else
-		return (ft_printchar('%'));
+		return (ft_printc('%'));
 }	
