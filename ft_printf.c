@@ -6,14 +6,13 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:00:12 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/25 11:06:30 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:36:38 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 int	ft_flags_check(char flag, va_list list);
-int	ft_doublecheck(char *str);
 
 int	ft_printf(const char *str, ...)
 {
