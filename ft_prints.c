@@ -6,7 +6,7 @@
 /*   By: feli-bar <feli-bar@student.42sp.org.br>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 08:53:36 by feli-bar          #+#    #+#             */
-/*   Updated: 2022/10/25 11:08:23 by feli-bar         ###   ########.fr       */
+/*   Updated: 2022/11/03 14:47:00 by feli-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_prints(char *str)
 	i = 0;
 	if (!str)
 		return (write(1, "(null)", 6));
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
